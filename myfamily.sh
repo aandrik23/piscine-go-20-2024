@@ -1,10 +1,17 @@
 #!/bin/bash
 
-# Fetch the superhero data from the JSON API and extract the family of the superhero with the given ID
-family=$(curl -s https://platform.zone01.gr/assets/superhero/all.json | jq -r --arg HERO_ID "$HERO_ID" '.[] | select(.id == ($HERO_ID|tonumber)) | .connections.relatives')
+# Check if HERO_ID environment variable is set
+if [ -z "$HERO_ID" ]; then
+  echo "HERO_ID environment variable is not set."
+  exit 1
+fi
 
-# Remove quotes from the family string
-family=$(echo "$family" | tr -d '\"')
+# Fetch data from the URL and parse JSON using jq
+family=$(curl -s https://platform.zone01.gr/assets/superhero/all.json | jq -r ".[] | select(.id == \"$HERO_ID\") | .relatives")
 
-# Display the family
-echo "$f
+# Remove quotes from the relatives field
+family=$(echo "$family" | sed 's/"//g')
+
+# Display the family information
+echo "Family of Hero ID $HERO_ID:"
+echo "$family"
