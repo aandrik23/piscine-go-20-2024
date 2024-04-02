@@ -7,7 +7,7 @@ if [ -z "$HERO_ID" ]; then
 fi
 
 # Fetch data from the URL and parse JSON using jq
-family=$(curl -s https://platform.zone01.gr/assets/superhero/all.json | jq -r ".[] | select(.id == \"$HERO_ID\") | .relatives")
+family=$(curl -s https://platform.zone01.gr/assets/superhero/all.json | jq -r ".[] | select(.id == \"$HERO_ID\") | .connections.relatives")
 
 # Remove quotes from the relatives field
 family=$(echo "$family" | sed 's/"//g')
