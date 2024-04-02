@@ -4,7 +4,7 @@
 family=$(curl -s https://platform.zone01.gr/assets/superhero/all.json | jq -r --arg HERO_ID "$HERO_ID" '.[] | select(.id == ($HERO_ID|tonumber)) | .connections.relatives')
 
 # Remove quotes from the family string
-family=$(echo "$family" | tr -d '"')
+family=$(echo "$family" | tr -d '\"')
 
 # Display the family
-echo "$family"
+echo "$f
