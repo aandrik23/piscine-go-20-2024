@@ -1,10 +1,1 @@
-#!/bin/bash
-
-# Look for files starting with 'a'
-find . -type f -name 'a*' -print
-
-# Look for files ending with 'z'
-find . -type f -name '*z' -print
-
-# Look for files starting with 'z' and ending with 'a!'
-find . -type f -name 'z*a!' -print
+find . \( -name'a*' -o -type f -name '*z' -o -nmae 'z*a! \)
