@@ -1,1 +1,1 @@
-ls -lAt | awk '!/^\..*/ { if ($1 ~ /^d/) { print $NF "/" } else { print $NF } }' | tr '\n' ',' | sed 's/,$//'
+ls -lAt | awk '!/^\..*/ && !/^total/ { if ($1 ~ /^d/) { print $NF "/" } else { print $NF } }' | tr '\n' ',' | sed 's/,$//'
