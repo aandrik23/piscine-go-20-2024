@@ -4,7 +4,7 @@ import "github.com/01-edu/z01"
 
 // PrintComb2 prints all possible combinations of two different two-digit numbers.
 func PrintComb2() {
-	for i := 0; i < 99; i++ {
+	for i := 0; i <= 98; i++ {
 		for j := i + 1; j <= 99; j++ {
 			if i < 10 {
 				z01.PrintRune('0')
