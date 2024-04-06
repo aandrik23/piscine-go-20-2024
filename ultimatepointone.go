@@ -1,10 +1,8 @@
 package piscine
 
 func UltimatePointOne(n ***int) {
-	var a *int
-	var b **int
-	*a = 1
+	var a = 1
+	var b *int
+	*n = &b
 	*b = a
-	*n = b
-
 }
