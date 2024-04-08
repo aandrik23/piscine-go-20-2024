@@ -1,18 +1,16 @@
 package piscine
 
 func IsPrime(nb int) bool {
-	i := 0
+	i := 2
 
-	if i == 2 {
+	if nb == 2 {
 		return true
-	}
-
-	for i := 2; i*i <= nb; i++ {
-		// If the square of i equals nb, return true
-		if i*i == nb {
-			return true
+	} else {
+		for i = 3; i <= nb; i = i + 2 {
+			if nb%i != 0 {
+				return false
+			}
 		}
 	}
-	// If the loop completes without finding a whole number square root, return false
-	return false
+	return true
 }
