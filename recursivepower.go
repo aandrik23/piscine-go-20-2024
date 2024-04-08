@@ -2,12 +2,12 @@ package piscine
 
 func RecursivePower(nb int, power int) int {
 	var repo int = 1
-	a := 1
+	var a int = 1
 	if power < 0 {
 		repo = 0
 	} else if power == 0 {
 		repo = 1
-	} else if a <= power {
+	} else if a > 0 || a <= power {
 		a++
 		repo = repo * nb
 	}
