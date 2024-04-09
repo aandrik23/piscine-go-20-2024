@@ -7,6 +7,6 @@ func NRune(s string, n int) rune {
 	if n <= 0 || n > ab {
 		return ac
 	} else {
-		return aa[ab]
+		return aa[n]
 	}
 }
