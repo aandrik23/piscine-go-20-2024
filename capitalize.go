@@ -5,7 +5,7 @@ func Capitalize(s string) string {
 	var cap string
 	for _, v := range s {
 		// if no letter then no change and go
-		if (v <= 65 && v >= 90) && (v <= 97 && v >= 122) {
+		if (v < 65 && v > 90) && (v < 97 && v > 122) {
 			cap += string(v)
 			fch = 0
 
