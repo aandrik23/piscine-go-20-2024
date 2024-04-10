@@ -7,10 +7,20 @@ import (
 )
 
 func main() {
-	name := os.Args[0]
-	for _, v := range name {
-		z01.PrintRune(rune(v))
+	// Get the full path of the program
+	fullPath := os.Args[0]
+	// Find the last '/' character to get the executable name
+	executableName := fullPath
+	for i := len(fullPath) - 1; i >= 0; i-- {
+		if fullPath[i] == '/' {
+			executableName = fullPath[i+1:]
+			break
+		}
 	}
+	// Iterate over each character in the executable name
+	for _, char := range executableName {
+		z01.PrintRune(char)
+	}
+	// Print a newline character at the end
 	z01.PrintRune('\n')
-
 }
