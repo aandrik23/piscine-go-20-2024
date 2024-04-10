@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	param := os.Args
+	param := os.Args[1:]
 	cntarg := len(param)
 	for i := cntarg; i >= 1; i-- {
 		for _, word := range param[i] {
