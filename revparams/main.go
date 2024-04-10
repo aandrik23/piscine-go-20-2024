@@ -9,7 +9,7 @@ import (
 func main() {
 	param := os.Args
 	cntarg := len(param)
-	for i := cntarg; i == 1; i-- {
+	for i := cntarg; i >= 1; i-- {
 		for _, word := range param[i] {
 			z01.PrintRune(word)
 		}
