@@ -11,7 +11,7 @@ func main() {
 		for _, word := range parametr {
 			z01.PrintRune(word)
 		}
+		z01.PrintRune('\n')
 	}
-	z01.PrintRune('\n')
 
 }
