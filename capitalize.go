@@ -31,6 +31,8 @@ func Capitalize(s string) string {
 		} else if fch > 0 && (v >= 97 && v <= 122) {
 			fch++
 			cap += string(v)
+		} else {
+			cap += string(v)
 		}
 	}
 	return cap
