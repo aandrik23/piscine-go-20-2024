@@ -8,8 +8,8 @@ import (
 
 func main() {
 	param := os.Args[1:]
-	cntarg := len(param)
-	for i := cntarg; i >= 1; i-- {
+	cntarg := len(param) - 1
+	for i := cntarg; i >= 0; i-- {
 		for _, word := range param[i] {
 			z01.PrintRune(word)
 		}
