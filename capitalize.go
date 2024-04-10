@@ -1,39 +1,25 @@
 package piscine
 
 func Capitalize(s string) string {
-	var fch int = 0
-	var cap string
+	first_letter := true
+	result := ""
 	for _, v := range s {
-		// if no letter then no change and go
-		if (v < 65 && v > 90) && (v < 97 && v > 122) {
-			cap += string(v)
-			fch = 0
-
-			// if fch =o and letter then we have first letter
-			// if capital go
-		} else if fch == 0 && (v >= 65 && v <= 90) {
-			fch++
-			cap += string(v)
-
-			// if small then capital
-		} else if fch == 0 && (v >= 97 && v <= 122) {
-			fch++
-			cap += string(v - 32)
-
-			// if fch=1 then no first letter
-		} else if
-		// if capital then small
-		fch > 0 && (v >= 65 && v <= 90) {
-			fch++
-			cap += string(v + 32)
-
-			// if small then go
-		} else if fch > 0 && (v >= 97 && v <= 122) {
-			fch++
-			cap += string(v)
+		if v >= 'a' && v <= 'z' && first_letter {
+			result += string(v - 32)
+			first_letter = false
+		} else if v >= 'A' && v <= 'Z' && !first_letter {
+			result += string(v + 32)
+		} else if ((v >= 'a' && v <= 'z') || (v >= '0' && v <= '9')) && !first_letter {
+			result += string(v)
+		} else if ((v >= 'A' && v <= 'Z') || (v >= '0' && v <= '9')) && !first_letter {
+			result += string(v)
+		} else if ((v >= 'A' && v <= 'Z') || (v >= '0' && v <= '9')) && first_letter {
+			result += string(v)
+			first_letter = false
 		} else {
-			cap += string(v)
+			result += string(v)
+			first_letter = true
 		}
 	}
-	return cap
+	return result
 }
