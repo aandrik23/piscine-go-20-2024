@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	name := os.Args
+	name := os.Args[1:]
 	for i := 0; i < len(name)-1; {
 		if name[i] > name[i+1] {
 			name[i], name[i+1] = name[i+1], name[i]
