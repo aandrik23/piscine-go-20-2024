@@ -9,6 +9,7 @@ import (
 func main() {
 
 	letter := os.Args[1:]
+
 	cletter := []byte(letter)
 
 	for i := 0; i <= len(letter)-1; {
