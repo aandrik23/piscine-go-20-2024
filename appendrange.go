@@ -5,7 +5,7 @@ func AppendRanintge(min, max int) []int {
 	i := 0
 	var answer []int
 	if min > max {
-
+		answer = append(answer, 0)
 	} else {
 
 		for i = min; i < max; i++ {
@@ -13,5 +13,4 @@ func AppendRanintge(min, max int) []int {
 		}
 	}
 	return answer
-
 }
