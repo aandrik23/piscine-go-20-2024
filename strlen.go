@@ -2,7 +2,7 @@ package piscine
 
 func StrLen(s string) int {
 	count := 0
-	for v := 1; v < len(s); v++ {
+	for range s {
 		count = count + 1
 	}
 	return count
