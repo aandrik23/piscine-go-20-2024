@@ -20,8 +20,7 @@ func main() {
 			fileSize := fileInfo.Size()
 			text := make([]byte, fileSize)
 			file.Read(text)
-			fmt.Println(string(text))
-			fmt.Println(" ")
+			fmt.Print(string(text))
 			file.Close()
 		}
 	}
