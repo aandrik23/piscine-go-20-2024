@@ -21,6 +21,7 @@ func main() {
 			text := make([]byte, fileSize)
 			file.Read(text)
 			fmt.Println(string(text))
+			fmt.Println(" ")
 			file.Close()
 		}
 	}
