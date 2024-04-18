@@ -15,6 +15,7 @@ func IsNotPaired(n int, a []int) bool {
 	}
 	return false
 }
+
 func Unmatch(a []int) int {
 	var check []int
 	var result int
