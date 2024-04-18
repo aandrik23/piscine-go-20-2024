@@ -8,7 +8,14 @@ import (
 
 func DealAPackOfCards(deck []int) {
 	players := 4
-	cardsPerPlayer := len(deck) / players
+	cardsPerPlayer := 0
+	count := 0
+
+	for range deck {
+		count++
+	}
+
+	cardsPerPlayer = count / players
 
 	for i := 0; i < players; i++ {
 		fmt.Printf("Player %d: ", i+1)
