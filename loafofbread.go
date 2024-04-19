@@ -5,17 +5,25 @@ func LoafOfBread(str string) string {
 		return "Invalid Output\n"
 	}
 
+	var newStr string
+	for _, char := range str {
+		if char != ' ' {
+			newStr += string(char)
+		}
+	}
+
 	var result string
-	for i := 0; i < len(str); i += 5 {
+	for i := 0; i < len(newStr); i += 5 {
 		end := i + 5
-		if end > len(str) {
-			end = len(str)
+		if end > len(newStr) {
+			end = len(newStr)
 		}
-		word := str[i:end]
-		if end < len(str) && str[end-1] != ' ' {
-			word += "\n"
+		word := newStr[i:end]
+		if end < len(newStr) {
+			result += word + "\n"
+		} else {
+			result += word
 		}
-		result += word
 	}
 
 	return result
