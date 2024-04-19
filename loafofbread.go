@@ -19,10 +19,15 @@ func LoafOfBread(str string) string {
 			end = len(newStr)
 		}
 		word := newStr[i:end]
-		if i+5 < len(newStr) {
-			word += " "
-		}
 		result += word
+		// Insert a space if there are more characters in the new string
+		if end < len(newStr) && end%5 != 0 {
+			result += " "
+		}
+	}
+	// Remove the last space, if any
+	if result[len(result)-1] == ' ' {
+		result = result[:len(result)-1]
 	}
 
 	return result
