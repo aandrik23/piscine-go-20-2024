@@ -4,10 +4,10 @@ func Max(a []int) int {
 	if len(a) == 0 {
 		return 0
 	}
-	for i := 1; i < len(a)-1; {
-		if a[i-1] > a[i] {
-			a[i-1], a[i] = a[i], a[i-1]
-			i = 1
+	for i := 0; i < len(a)-1; {
+		if a[i] > a[i+1] {
+			a[i], a[i+1] = a[i+1], a[i]
+			i = 0
 		} else {
 			i++
 		}
