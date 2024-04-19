@@ -19,10 +19,10 @@ func LoafOfBread(str string) string {
 			end = len(newStr)
 		}
 		word := newStr[i:end]
+		result += word
+		// Insert a space if there are more characters in the new string
 		if end < len(newStr) {
-			result += word + "\n"
-		} else {
-			result += word
+			result += " "
 		}
 	}
 
