@@ -6,15 +6,21 @@ func LoafOfBread(str string) string {
 	}
 
 	var result string
-	for i := 0; i < len(str); i += 6 {
+	for i := 0; i < len(str); {
 		end := i + 5
-		if end >= len(str) {
+		if end > len(str) {
 			end = len(str)
 		}
+		if end < len(str) && str[end-1] != ' ' {
+			for end > i && str[end-1] != ' ' {
+				end--
+			}
+		}
 		result += str[i:end]
-		if end < len(str)-1 && str[end] != ' ' {
+		if end < len(str) && str[end-1] != ' ' {
 			result += "\n"
 		}
+		i = end
 	}
 
 	return result
