@@ -9,7 +9,7 @@ func SplitWhiteSpaces(s string) []string {
 		if i == len(s)-1 {
 			answer = append(answer, wordBuild)
 		} else if word[i] == ' ' || word[i] == '\n' || word[i] == '\t' {
-			answer = append(answer, wordBuild)
+			answer = append(answer, wordBuild[:(len(wordBuild)-1)])
 			wordBuild = ""
 		}
 	}
